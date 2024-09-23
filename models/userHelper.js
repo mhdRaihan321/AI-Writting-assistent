@@ -4,7 +4,7 @@ module.exports ={
 askGemini:async(prompt) =>{
     try {
         // Use the correct method to access the API key from environment variables
-        const apiKey = process.env.API_KEY || 'AIzaSyDZi05N1YLh1yHoxxwjqbqPGzxkqZtMF6c';
+        const apiKey = process.env.API_KEY || '';
         const genAI = new GoogleGenerativeAI(apiKey);
         
         // Get the generative model
