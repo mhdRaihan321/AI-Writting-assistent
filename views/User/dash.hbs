@@ -11,55 +11,52 @@
 <body>
     <header>
         <h1>AI Writing Assistant</h1>
+        <p class="made-by">Made by Raihan</p>
         <nav>
             <ul>
                 <li><a href="#features">Features</a></li>
-                <li><a href="#commingfeatures">Comming Features</a></li>
-                <input type="hidden" hidden name="" value="sdfsdf8s7df8756sdfsd6f897bs6vf7xb&VfFGDp:KUIGSDGFUGDSFUIGSFDGSDFSD8234" id="">
+                <li><a href="#comingfeatures">Coming Features</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-<section id="Ask" class="ask-section">
-    <h2>Ask Me To Write Something</h2>
+        <section id="ask" class="ask-section">
+            <h2>Ask Me To Write Something</h2>
 
-    <label for="warning" class="text-warning" style="text-align: center; color: #f71414;">AI can make mistakes. Check important info.</label>
-    <div class="form-container">
-        <form action="/--user--/sdfsdf8s7df8756sdfsd6f897bs6vf7xb&VfFGDp:KUIGSDGFUGDSFUIGSFDGSDFSD8234/asked/sdfsdf8s7df8756sdfsd6f897bs6vf7xb&VfFGDp:KUIGSDGFUGDSFUIGSFDGSDFSD8234" method="post" class="chat-input-form">
-            <input type="text" name="InputFromUser" id="InputFromUser" class="chat-input"
-                placeholder="Type your question or prompt here..." required>
-            <button type="submit" class="chat-submit-btn">Send</button>
-        </form>
-    </div>
-    <div id="resultSection">
-        {{#if userInput}}
-        <div class="chat-box">
-            <div class="user-input">
-                <strong>You:</strong>
-                <p>{{userInput}}</p>
+            <div class="form-container">
+                <form action="/--user--/sdfsdf8s7df8756sdfsd6f897bs6vf7xb&VfFGDp:KUIGSDGFUGDSFUIGSFDGSDFSD8234/asked/sdfsdf8s7df8756sdfsd6f897bs6vf7xb&VfFGDp:KUIGSDGFUGDSFUIGSFDGSDFSD8234" method="post" class="chat-input-form">
+                    <input type="text" name="InputFromUser" id="InputFromUser" class="chat-input"
+                        placeholder="Type your question or prompt here..." required>
+                    <button type="submit" class="chat-submit-btn">Send</button>
+                </form>
             </div>
-            {{#if generatedText}}
-            <div class="generated-response">
-                <strong>AI Writing Assistant:</strong>
-                <div class="formatted-response">{{{generatedText}}}</div>
+            <div id="resultSection">
+                {{#if userInput}}
+                <div class="chat-box">
+                    <div class="user-input">
+                        <strong>You:</strong>
+                        <p>{{userInput}}</p>
+                    </div>
+                    {{#if generatedText}}
+                    <div class="generated-response">
+                        <strong>AI Writing Assistant:</strong>
+                        <div class="formatted-response">{{{generatedText}}}</div>
+                    </div>
+                    {{else}}
+                    <div class="generated-response">
+                        <strong>AI Writing Assistant:</strong>
+                        <p>No response generated yet.</p>
+                    </div>
+                    {{/if}}
+                </div>
+                {{else}}
+                <div class="chat-box">
+                    <p>Please ask a question to get a response!</p>
+                </div>
+                {{/if}}
             </div>
-            {{else}}
-            <div class="generated-response">
-                <strong>AI Writing Assistant:</strong>
-                <p>No response generated yet.</p>
-            </div>
-            {{/if}}
-        </div>
-        {{else}}
-        <div class="chat-box">
-            <p>Please ask a question to get a response!</p>
-        </div>
-        {{/if}}
-    </div>
-
-</section>
-
+        </section>
 
         <section id="features">
             <h2>Key Features</h2>
@@ -75,10 +72,10 @@
                 <h3>Prompt-Based Generation</h3>
                 <p>Generate relevant content based on your input prompts.</p>
             </div>
-
         </section>
-        <section id="commingfeatures">
-            <h2>Comming Features</h2>
+
+        <section id="comingfeatures">
+            <h2>Coming Features</h2>
             <div class="card">
                 <h3>Collaboration Tools</h3>
                 <p>Work with others in real-time on shared documents.</p>
@@ -92,10 +89,10 @@
 
     <footer>
         <p>&copy; 2024 AI Writing Assistant. All rights reserved.</p>
+        <p class="made-by">Made by Raihan</p>
     </footer>
 
     <script>
-        // Function to adjust content dynamically
         const adjustContent = () => {
             const results = document.querySelectorAll('#resultSection div');
             results.forEach(result => {
@@ -105,10 +102,7 @@
             });
         };
 
-        // Adjust content on page load
         window.onload = adjustContent;
-
-        // Adjust content on window resize
         window.onresize = adjustContent;
     </script>
 </body>

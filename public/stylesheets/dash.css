@@ -1,13 +1,13 @@
-
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
+    color: #333;
 }
 
 header {
-    background: linear-gradient(to right, #6a82fb, #fc5c7d);
+    background: linear-gradient(to right, #4b6cb7, #182848);
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -20,19 +20,15 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     display: flex;
-    gap: 15px;
+    gap: 20px;
     margin: 0;
-}
-
-nav ul li {
-    display: inline;
 }
 
 nav ul li a {
@@ -52,125 +48,88 @@ main {
 }
 
 section {
+    margin-bottom: 30px;
+}
+
+.ask-section {
+    background: #f5f5f5;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
-
-.ask-section h2 {
-    color: #6a82fb;
-    border-bottom: 2px solid #6a82fb;
-    padding-bottom: 10px;
-    font-size: 1.5rem;
-}
-
-.form {
+.chat-input-form {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    width: 100%;
+    max-width: 600px;
 }
 
-.form label {
-    font-weight: bold;
-    color: #333;
-}
-
-.form input[type="text"] {
-    padding: 10px;
+.chat-input {
+    flex: 1;
+    padding: 15px;
+    border-radius: 25px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    outline: none;
     transition: border-color 0.3s;
 }
 
-.form input[type="text"]:focus {
-    border-color: #6a82fb;
-    outline: none;
+.chat-input:focus {
+    border-color: #4b6cb7;
 }
 
-.form button {
-    background-color: #6a82fb;
+.chat-submit-btn {
+    background-color: #4b6cb7;
     color: white;
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 15px 20px;
+    border-radius: 25px;
+    margin-left: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-.form button:hover {
-    background-color: #fc5c7d;
+.chat-submit-btn:hover {
+    background-color: #182848;
 }
 
 .chat-box {
-    margin-top: 15px;
-    background-color: #ffffff;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.user-input,
-.generated-response {
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 8px;
-    word-wrap: break-word;
-}
-
-.user-input {
-    background-color: #d8e9ff;
-    border-left: 5px solid #6a82fb;
-}
-
-.generated-response {
-    background-color: #e2f0d4;
-    border-left: 5px solid #28a745;
-}
-
-footer {
-    text-align: center;
-    padding: 15px;
-    background: #6a82fb;
-    color: white;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-}
-
-#resultSection {
     margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-height: 400px;
+    overflow-y: auto;
 }
 
 .card {
     background: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #4b6cb7;
+    color: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 }
 
-table th,
-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
+footer .made-by {
+    font-size: 0.9rem;
+    color: #ffd700;
+    margin-top: 5px;
 }
 
-table th {
-    background-color: #f2f2f2;
-}
-
-.formatted-response {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #f0f4ff;
-    border-radius: 8px;
-}
-
-/* Media Queries */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -181,127 +140,23 @@ table th {
         justify-content: center;
         margin-top: 10px;
     }
-
-    .form input[type="text"] {
-        width: 100%;
-    }
-
-    .card {
-        margin-bottom: 20px;
-    }
 }
 
 @media (max-width: 480px) {
     header h1 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
     .ask-section h2 {
-        font-size: 1.25rem;
+        font-size: 1.3rem;
     }
 
-    .form input[type="text"] {
-        font-size: 0.9rem;
+    .chat-input-form {
+        flex-direction: column;
+        gap: 10px;
     }
 
-    .form button {
-        font-size: 0.9rem;
+    .chat-submit-btn {
+        width: 100%;
     }
-}.ask-section {
-background: #ffffff;
-padding: 20px;
-border-radius: 10px;
-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-margin: 20px 0;
-display: flex;
-flex-direction: column;
-justify-content: flex-start;
-height: 100vh;
 }
-
-.chat-box {
-overflow-y: auto;
-flex-grow: 1;
-margin-bottom: 10px;
-}
-
-.user-input, .generated-response {
-margin-bottom: 10px;
-padding: 10px;
-border-radius: 8px;
-word-wrap: break-word;
-}
-
-.user-input {
-background-color: #d8e9ff;
-border-left: 5px solid #6a82fb;
-}
-
-.generated-response {
-background-color: #e2f0d4;
-border-left: 5px solid #28a745;
-}
-
-.form-container {
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 10px 0;
-}
-
-.chat-input-form {
-display: flex;
-width: 100%;
-}
-
-.chat-input {
-flex: 1;
-padding: 10px;
-border-radius: 20px;
-border: 1px solid #ddd;
-outline: none;
-transition: border-color 0.3s;
-}
-
-.chat-input:focus {
-border-color: #6a82fb;
-}
-
-.chat-submit-btn {
-background-color: #6a82fb;
-color: white;
-border: none;
-padding: 10px 20px;
-border-radius: 20px;
-margin-left: 10px;
-cursor: pointer;
-transition: background-color 0.3s;
-}
-
-.chat-submit-btn:hover {
-background-color: #fc5c7d;
-}
-
-/* Scroll behavior for chat-box */
-.chat-box {
-max-height: calc(100vh - 300px);
-overflow-y: auto;
-padding-right: 10px;
-scrollbar-width: thin;
-scrollbar-color: #6a82fb #ddd;
-}
-
-/* Custom scrollbar for Webkit browsers */
-.chat-box::-webkit-scrollbar {
-width: 8px;
-}
-
-.chat-box::-webkit-scrollbar-thumb {
-background-color: #6a82fb;
-border-radius: 10px;
-}
-
-.chat-box::-webkit-scrollbar-track {
-background-color: #ddd;
-}
-
